@@ -7,12 +7,16 @@
 class Solution:
     def isSubtree(self, root: Optional[TreeNode], subRoot: Optional[TreeNode]) -> bool:
         #Base Case
-        if not root: 
-            return False
-        if self.isSameTree(root, subRoot): 
+        if not subRoot:
             return True
-        return self.isSubtree(root .left, subRoot) or self.isSubtree(root.right, subRoot)
-    
+        if not root:
+            return False
+        
+        if self.isSameTree(root, subRoot):
+            return True
+        else:
+            return self.isSubtree(root.left, subRoot) or self.isSubtree(root.right, subRoot)
+        
     def isSameTree(self, p, q):
         if not p and not q:
             return True
