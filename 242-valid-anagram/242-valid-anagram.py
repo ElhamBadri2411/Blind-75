@@ -11,9 +11,9 @@ class Solution:
             lookup_t[t[i]] = lookup_t.get(t[i], 0) + 1
             
         for letter in lookup_s:
-            if letter not in lookup_t or lookup_s[letter] != lookup_t[letter]:
+            if letter not in lookup_t or letter not in lookup_s or lookup_s[letter] != lookup_t[letter]:
                 return False
-        
-        
+    # n is length of s
+    # O(n)
         
         return True
